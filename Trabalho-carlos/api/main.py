@@ -1,24 +1,23 @@
 # main.py
 from fastapi import FastAPI
-from fastapi.middleware.cors import CORSMiddleware # Importe o Middleware
+from fastapi.middleware.cors import CORSMiddleware
 from .routers import usuarios
 
 # Inicializa o FastAPI
 app = FastAPI(title="CRUD Básico FastAPI + MongoDB")
 
-# Configurações de CORS para desenvolvimento
-# (Permite qualquer origem, cabeçalho e método)
+
 origins = [
     "*", # Permite todas as origens (use apenas para desenvolvimento!)
-    # Se você quiser restringir, poderia ser: "http://localhost", "http://127.0.0.1"
+   
 ]
 
 app.add_middleware(
     CORSMiddleware,
     allow_origins=origins,
     allow_credentials=True,
-    allow_methods=["*"],  # Permite todos os métodos (GET, POST, PUT, DELETE, OPTIONS, etc.)
-    allow_headers=["*"],  # Permite todos os cabeçalhos
+    allow_methods=["*"],  
+    allow_headers=["*"], 
 )
 
 

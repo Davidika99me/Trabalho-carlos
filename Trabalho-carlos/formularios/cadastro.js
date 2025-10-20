@@ -1,27 +1,25 @@
 // cadastro.js
 
-// URL base da sua API FastAPI
-// Se estiver rodando localmente (uvicorn), este é o endereço padrão
+
+
 const API_BASE_URL = 'http://127.0.0.1:8000';
 
-// 1. Capturar o formulário
+
 const form = document.getElementById('cadastroForm');
 
-// 2. Adicionar o ouvinte de evento (event listener)
 form.addEventListener('submit', async (e) => {
-    // Impede que o formulário recarregue a página
+
     e.preventDefault();
 
-    // 3. Capturar os valores dos campos
     const username = document.getElementById('username').value;
     const email = document.getElementById('email').value;
     const password = document.getElementById('password').value;
     const confirmar = document.getElementById('confirmar').value;
 
-    // 4. Validação simples no lado do cliente
+
     if (password !== confirmar) {
         alert('As senhas não coincidem!');
-        return; // Interrompe o processo
+        return; 
     }
 
     if (!username || !email || !password) {
@@ -29,7 +27,6 @@ form.addEventListener('submit', async (e) => {
         return;
     }
 
-    // 5. Estruturar os dados para a API (deve coincidir com seu modelo UsuarioCreate)
     const dadosUsuario = {
         username: username,
         email: email,
