@@ -1,0 +1,87 @@
+/* Fundo com um degradê vibrante */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #ff00c8, #ff8a00, #00e1ff, #9d00ff);
+    background-size: 400% 400%;
+    animation: gradient 10s ease infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Animação suave no fundo */
+@keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Caixa central colorida */
+.container {
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+    padding: 40px;
+    width: 300px;
+    text-align: center;
+    animation: pop 1s ease;
+}
+
+/* Efeito de surgimento */
+@keyframes pop {
+    from { transform: scale(0.5); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+/* Título com arco-íris */
+h1 {
+    background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 20px;
+}
+
+/* Campos do formulário */
+label {
+    display: block;
+    text-align: left;
+    color: #444;
+    font-weight: bold;
+    margin: 10px 0 5px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid transparent;
+    background-color: #f0f0f0;
+    transition: 0.3s;
+}
+
+input:focus {
+    border-color: #ff00c8;
+    outline: none;
+    box-shadow: 0 0 10px #ff00c8;
+}
+
+/* Botão animado */
+button {
+    background: linear-gradient(90deg, #ff00c8, #ff8a00, #00e1ff);
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 30px;
+    padding: 10px 20px;
+    margin-top: 15px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+}
